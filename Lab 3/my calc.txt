@@ -1,0 +1,35 @@
+predicates 
+nondeterm calculate(real,char,real,real).
+nondeterm check(char).
+nondeterm run.
+clauses
+
+calculate(X,C,Y,R):-
+C='+',R=X+Y.
+calculate(X,C,Y,R):-
+C='-',R=X-Y.
+calculate(X,C,Y,R):-
+C='*',R=X*Y.
+calculate(X,C,Y,R):-
+C='/',Y<>0,R=X/Y.
+check(Choice):-Choice='Y';Choice='y'.
+run:-
+write("plz write your operation ?"),nl,
+write("enter:(+) to add"),nl,
+write("enter:(-) to sub"),nl,
+write("enter:(*) to mul"),nl,
+write("enter:(/) to divide"),nl,
+write("plz enter your operation"),nl,
+readint(X),
+readchar(C),write(C),nl,
+readint(Y),nl,
+calculate(X,C,Y,R),
+write("result is =",R),nl,
+write("Do you want to continue ?"),nl,
+readchar(Choice),check(Choice),
+run.
+
+
+
+goal
+run.

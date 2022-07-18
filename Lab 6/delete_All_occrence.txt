@@ -1,0 +1,10 @@
+domains
+ilist = integer*
+predicates
+nondeterm delete_all(integer, ilist, ilist)
+clauses
+delete_all(_,[],[]).
+delete_all(X, [X|T], T1):-!, delete_all(X, T, T1).
+delete_all(X, [H|T], [H|L]):- delete_all (X,T,L).
+goal
+delete_all(1, [3,1,2,1,4,1],L).

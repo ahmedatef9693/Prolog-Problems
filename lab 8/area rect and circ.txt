@@ -1,0 +1,16 @@
+domains
+point=pnt(real,real)
+shape=rect(point,point);circle(point,integer).
+
+predicates
+
+area(shape,real).
+
+clauses
+
+
+area(rect(pnt(X1,Y1),pnt(X2,Y2)),Area):-W=abs(X1-X2),H=abs(Y1-Y2),Area=W*H.
+area(circle(pnt(_,_),R),Area):-Area=22/7*R*R.
+
+goal
+area(rect(pnt(5,6),pnt(7,8)),A).

@@ -1,0 +1,13 @@
+domains
+name=name(symbol,symbol).
+date=date(integer,symbol,integer).
+gender=gender(symbol).
+predicates
+
+nondeterm person(name,date,gender).
+
+clauses
+person(name(ahmed,atef),date(13,may,1996),gender(male)).
+person(name(sara,atef),date(30,june,1998),gender(female)).
+goal
+person(name(First_name,Last_name),date(Day,Month,Year),gender(G)).

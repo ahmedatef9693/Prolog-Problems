@@ -1,0 +1,17 @@
+domains
+point=pnt(real,real).
+shape=cyl(real,real);el(point,integer,integer).
+
+predicates
+
+
+area(shape,real).
+
+
+clauses
+
+area(cyl(R,H),A):-A=(2*(22/7)*R*R)+(H*(2*(22/7)*R)).
+
+area(el(pnt(_,_),A,B),Area):-Area=(22/7)*(A*B).
+goal
+area(cyl(6,2),A).

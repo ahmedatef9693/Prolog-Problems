@@ -1,0 +1,16 @@
+domains
+
+list=integer*
+
+predicates
+
+mul(integer,list,list).
+
+clauses
+
+mul(_,[],[]):-!.
+mul(X,[H|T],[Nh|T1]):-Nh=H*X,mul(X,T,T1).
+
+
+goal
+mul(5,[5,4,3],L).
